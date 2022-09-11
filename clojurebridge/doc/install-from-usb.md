@@ -9,17 +9,15 @@
 ## Install Java
 
 1. Open Spotlight (command + space), search for Terminal and open it
-2. Write `java -version` command and press enter. If you see ` version "1.8.0_xxxx"`, go to **9**. Otherwise continue.
-3. .--.,
-Doubleclick on java......dmg, continue the installation per instructions
+2. Write `java -version` command and press enter. If you see ` version "1.8.0_xxxx"`, you should be okay and you can continue to next section, installing Visual Studio Code. Otherwise continue to **3**.
+3. Find the folder you unzipped, and doubleclick the "jdk-8u341-macosx-x64.dmg" -file.
+4. Doubleclick on "JDK 8 Update 341.pkg", and continue the installation per instructions.
 
 ## Install Visual Studio Code
 
-4. Open the vscode-folder and click the Visual Studio Code.app. If the computer asks for access rights, say "Ok"
-5. Drag Visual Studio Code.app to Applications ????
-6. Open Spotlight (command + space), search for Visual Studio Code.app and open it
-7. Click Open in the dialogue that shows a warning that the application is downloaded from the Internet
-8. Continue with **vscode Instructions**, found from the left.
+1. Open the vscode-folder and click the Visual Studio Code.app. If the computer asks for access rights, say it's okay to open.
+2. If you get a popup warning that the application is downloaded from the Internet, confirm "Open".
+3. Continue with **vscode instructions**.
 
 # Windows
 
@@ -30,18 +28,16 @@ Doubleclick on java......dmg, continue the installation per instructions
 
 ## Install Java
 
-4. Open Powershell (via Start-menu search)
-5. Write `java -version` command and press enter. If you see ` version "1.8.0_xxx"`, go to **9**. Otherwise continue.
--...
-6. Doubleclick on java....exe, accept terms, click next, next, close
-7. Drag java.exe to trash bin
+1. Open Powershell (via Start-menu search)
+2. Write `java -version` command and press enter. If you see ` version "1.8.0_xxx"`, you should be okay and you can continue to next section, installing Visual Studio Code. Otherwise continue to **3**.
+3. Find the folder you unzipped, and doubleclick the "jdk-8u341-windows-x64.exe" -file and continue the installation per instruction.
 
 ## Install Visual Studio Code
 
-9. Doubleclick Visual Studio Code.exe
-10. If you get a security warning, click "Run"
-11. Click "Install" and wait until Visual Studio Code opens
-12. If you get a Windows Defender/Firewall warning, click "Allow"
-8. Continue with **vscode Instructions**, found from the left.
+1. Open the vscode-folder doubleclick Code.exe
+2. If you get a security warning, click "Run"
+3. Click "Install" and wait until Visual Studio Code opens
+4. If you get a Windows Defender/Firewall warning, click "Allow"
+5. Continue with **vscode instructions**.
 
 If you are using Linux, you can ask help from the coach.
