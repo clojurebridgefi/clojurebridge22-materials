@@ -12,16 +12,22 @@ First it guides you to install required Java SDK version, and Visual Studio Code
 
 ## Install Java
 
-1. Open Spotlight (command + space), search for Terminal and open it
-2. Write `java -version` command and press enter. If you see ` version "1.8.0_xxxx"`, you should be okay and you can continue to next section, installing Visual Studio Code. Otherwise continue to **3**.
-3. Find the folder you unzipped, and doubleclick the "jdk-8u341-macosx-x64.dmg" -file.
-4. Doubleclick on "JDK 8 Update 341.pkg", and continue the installation per instructions.
+5. Open Spotlight (command + space), search for Terminal and open it
+6. Write `java -version` command and press enter. If you see ` version "1.8.0_xxxx"`, you should be okay and you can continue to next section, installing Visual Studio Code. Otherwise continue to **3**.
+7. Find the folder you unzipped, and doubleclick the "jdk-8u341-macosx-x64.dmg" -file.
+8. Doubleclick on "JDK 8 Update 341.pkg", and continue the installation per instructions.
 
 ## Install Visual Studio Code
 
-1. Open the vscode-folder and click the Visual Studio Code.app. If the computer asks for access rights, say it's okay to open.
-2. If you get a popup warning that the application is downloaded from the Internet, confirm "Open".
-3. Continue with **B. Set up VSCode**.
+9. Open the vscode-folder and click the Visual Studio Code.app. If the computer asks for access rights, say it's okay to open.
+10. If you get a popup warning that the application is downloaded from the Internet, confirm "Open".
+
+## Install Leiningen
+
+11. Open your Terminal again (open Spotlight (command + space), search for Terminal and open it)
+12. Type "brew install leiningen". If it starts the install, you should be all set, and continue with **B. Set up VSCode** when the installation finishes.
+13. If an error happened and it says it doesn't know what brew is, you might need to install Homebrew first by running this in your Terminal:
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)". After that finishes, type "brew install leiningen" again.
 
 # Windows
 
@@ -32,17 +38,21 @@ First it guides you to install required Java SDK version, and Visual Studio Code
 
 ## Install Java
 
-1. Open Powershell (via Start-menu search)
-2. Write `java -version` command and press enter. If you see ` version "1.8.0_xxx"`, you should be okay and you can continue to next section, installing Visual Studio Code. Otherwise continue to **3**.
-3. Find the folder you unzipped, and doubleclick the "jdk-8u341-windows-x64.exe" -file and continue the installation per instruction.
+5. Open Powershell (via Start-menu search)
+6. Write `java -version` command and press enter. If you see ` version "1.8.0_xxx"`, you should be okay and you can continue to next section, installing Visual Studio Code. Otherwise continue to **3**.
+7. Find the folder you unzipped, and doubleclick the "jdk-8u341-windows-x64.exe" -file and continue the installation per instruction.
 
 ## Install Visual Studio Code
 
-1. Open the vscode-folder doubleclick Code.exe
-2. If you get a security warning, click "Run"
-3. Click "Install" and wait until Visual Studio Code opens
-4. If you get a Windows Defender/Firewall warning, click "Allow"
-5. Continue with **B. Set up VSCode**.
+8. Open the vscode-folder doubleclick Code.exe
+9. If you get a security warning, click "Run"
+10. Click "Install" and wait until Visual Studio Code opens
+11. If you get a Windows Defender/Firewall warning, click "Allow"
+
+## Install Leiningen
+
+12. Go to https://djpowell.github.io/leiningen-win-installer/ and download the leiningen-win-installer 1.0 under the green arrowy button. Follow the instructions of the installation wizard.
+13. Continue with **B. Set up VSCode**.
 
 If you are using Linux, you can ask help from the coach.
 

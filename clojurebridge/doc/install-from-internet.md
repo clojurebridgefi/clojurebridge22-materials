@@ -26,7 +26,13 @@ First it guides you to install required Java SDK version, and Visual Studio Code
 15. When asked if you want to open Visual Studio Code because it's downloaded from the Internet, click Open.
 16. Open Visual Studio Code.app from your Applications-folder.
 17. Click Extensions from the left - the icon that looks like four squares with one loose, and search for Calva. The search should match "Calva: Clojure & ClojureScript Interactive Programming". Select it, and click Install.
-18. Continue with **B. Set up VSCode**.
+## Install Leiningen
+
+18. Open your Terminal again (open Spotlight (command + space), search for Terminal and open it)
+19. Type "brew install leiningen". If it starts the install, you should be all set, and continue with **B. Set up VSCode** when the installation finishes.
+20. If an error happened and it says it doesn't know what brew is, you might need to install Homebrew first by running this in your Terminal:
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)". After that finishes, type "brew install leiningen" again.
+21. Continue with **B. Set up VSCode**.
 
 # Windows
 
@@ -50,8 +56,11 @@ First it guides you to install required Java SDK version, and Visual Studio Code
 13. Open the downloaded Code.exe, and follow the installation wizard.
 14. Make sure the application opens after installation.
 15. Click Extensions from the left - the icon that looks like four squares with one loose, and search for Calva. The search should match "Calva: Clojure & ClojureScript Interactive Programming". Select it, and click Install.
-16. Continue with **B. Set up VSCode**.
 
+## Install Leiningen
+
+16. Go to https://djpowell.github.io/leiningen-win-installer/ and download the leiningen-win-installer 1.0 under the green arrowy button. Follow the instructions of the installation wizard.
+17. Continue with **B. Set up VSCode**.
 
 If you are using Linux, you can ask help from the coach.
 
