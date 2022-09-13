@@ -31,10 +31,10 @@ First it guides you to install required Java SDK version, and Visual Studio Code
 ## Install Leiningen
 
 18. Open your Terminal again (open Spotlight (command + space), search for Terminal and open it)
-19. Type "brew install leiningen". If it starts the install, you should be all set, and continue with **B. Set up VSCode** when the installation finishes.
+19. Type `brew install leiningen`. If it starts the install, you should be all set, and continue with **B. Set up VSCode** when the installation finishes.
 20. If an error happened and it says it doesn't know what brew is, you might need to install Homebrew first by running this in your Terminal:
 `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" `
-After that finishes, type "brew install leiningen" again.
+After that finishes, type `brew install leiningen` again.
 21. Continue with **B. Set up VSCode**.
 
 # Windows
