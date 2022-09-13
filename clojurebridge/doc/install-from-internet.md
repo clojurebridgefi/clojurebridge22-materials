@@ -2,6 +2,7 @@ This installation guide helps you to install required software for ClojureBridge
 First it guides you to install required Java SDK version, and Visual Studio Code, then set up the development environment. There are separate parts for installing the software for Mac and Windows.
 
 # A.Install required software
+
 # Mac OS
 
 ## Download and install Java
@@ -26,12 +27,14 @@ First it guides you to install required Java SDK version, and Visual Studio Code
 15. When asked if you want to open Visual Studio Code because it's downloaded from the Internet, click Open.
 16. Open Visual Studio Code.app from your Applications-folder.
 17. Click Extensions from the left - the icon that looks like four squares with one loose, and search for Calva. The search should match "Calva: Clojure & ClojureScript Interactive Programming". Select it, and click Install.
+
 ## Install Leiningen
 
 18. Open your Terminal again (open Spotlight (command + space), search for Terminal and open it)
 19. Type "brew install leiningen". If it starts the install, you should be all set, and continue with **B. Set up VSCode** when the installation finishes.
 20. If an error happened and it says it doesn't know what brew is, you might need to install Homebrew first by running this in your Terminal:
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)". After that finishes, type "brew install leiningen" again.
+`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" `
+After that finishes, type "brew install leiningen" again.
 21. Continue with **B. Set up VSCode**.
 
 # Windows
@@ -77,7 +80,7 @@ If you are using Linux, you can ask help from the coach.
 ## Open the first file and start the REPL!
 
 6. On the left you will see a project called clojurebridge. Click it open, then select src → clojurebridge → basics.clj
-7. Start the repl with two key combinations: Ctrl + Option + c and then Ctrl + Option + j.
+7. Start the repl with two key combinations: `Ctrl + Option + c` and then `Ctrl + Option + j`.
 8. If you're prompted to select from two projects, select the one that ends with clojurebridge.
 9. From the project type selection pick Leiningen, and then for the profiles to lauch with, just click Ok (no überjar).
 10. You should see the repl on the right side, telling "Jack-in done". If not, ask for help from a coach.
