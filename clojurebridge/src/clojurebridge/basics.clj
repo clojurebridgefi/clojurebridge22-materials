@@ -22,9 +22,10 @@
 ;;
 ;; Let's make our own function
 ;;
-
-; Calculate the average height of you and two neighbours
-
+; Espeon 0.9m
+; Snorlax 2.1m
+; Giratina 4.5m
+; Calculate the average height these three pokemons
 
 ;;
 ;; Data Structures:
