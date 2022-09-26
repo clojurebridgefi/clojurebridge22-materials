@@ -22,10 +22,10 @@
 ;;
 ;; Let's make our own function
 ;;
-; Espeon 0.9m
-; Snorlax 2.1m
-; Giratina 4.5m
-; Calculate the average height these three pokemons
+; Tiger 0.9m
+; Horse 2.1m
+; Giraffe 4.5m
+; Calculate the average height these three animals
 
 ;;
 ;; Data Structures:
@@ -35,12 +35,13 @@
 ; - count
 ; - conj
 ; - first
+; - rest
 ; - nth
 
 ; Exercise
 ;
-; Make a vector of the high temperatures for the next 7 days in the town where you live.
-; Then use the nth function to get the high temperature for next Tuesday.
+; Make a vector of the temperatures for the next 7 days in the town where you live.
+; Then use the nth function to get the temperature for next Tuesday.
 
 ; Map
 ; - get
@@ -59,7 +60,7 @@
 ; Optional Exercise
 ;
 ; Create a vector with a map of your name and home town
-; Then use assoc to add a map with your neighbour's name and home town
+; Then use conj to add a map with your neighbour's name and home town
 
 ; Map of Maps
 
