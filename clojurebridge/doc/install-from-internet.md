@@ -51,19 +51,28 @@ After that finishes, type `brew install leiningen` again.
 8. Select your operating system: Windows.
 9. Click the "jdk-8u341-windows-x64.exe" to download the installer.
 10. You need to accept the license - this version of Java is not to be used for commercial purposes. Accept, and continue with the Download -button.
-11. When the download completes, open the downloaded file. Follow the installation wizard instructions.
+11. When the download completes, open the downloaded file. Follow the installation wizard instructions. Note the folder where it installs Java.
+12. Check if Java was properly installed: open Powershell again, and write `java -version` command and press enter. If you see ` version "1.8.0_xxx"`, you should be okay and you can continue to next section, installing Visual Studio Code. Otherwise continue to **13**.
+13. Open "Järjestelmän ominaisuudet" (System Properties) by typing "Muokkaa järjestelmän ympäristömuuttujia" (environment Variables) in the Windows search bar, found in the bottom bar, and click the first result open.
+14. On the "Järjestelmän ominaisuudet" (System Properties) -window, click "Ympäristömuuttujat" (Environment Variables) -button.
+15. From the lower window with a "System Variables" -header, select a row that says "Path" on it.
+16. Click the "Muokkaa..." (Edit...) -button below the window you selected the row from.
+17. Click the "Selaa..." (Browse...) -button
+18. Find the folder you installed the Java. Most likely it will be under "Tämä tietokone" -> Paikallinen levy (C:) -> Program Files -> Java (or in English language machines, My Computer -> Local Disk (C:) -> Program Files -> Java)
+19. From that folder, select the folder "bin", and click Ok.
+20. Click Ok as many times as needed, to close all the gray windows.
 
 ## Install Visual Studio Code
 
-12. Go to https://code.visualstudio.com/download and click the big blue button with "Windows" in it.
-13. Open the downloaded Code.exe, and follow the installation wizard.
-14. Make sure the application opens after installation.
-15. Click Extensions from the left - the icon that looks like four squares with one loose, and search for Calva. The search should match "Calva: Clojure & ClojureScript Interactive Programming". Select it, and click Install.
+21. Go to https://code.visualstudio.com/download and click the big blue button with "Windows" in it.
+22. Open the downloaded Code.exe, and follow the installation wizard.
+23. Make sure the application opens after installation.
+24. Click Extensions from the left - the icon that looks like four squares with one loose, and search for Calva. The search should match "Calva: Clojure & ClojureScript Interactive Programming". Select it, and click Install.
 
 ## Install Leiningen
 
-16. Go to https://djpowell.github.io/leiningen-win-installer/ and download the leiningen-win-installer 1.0 under the green arrowy button. Follow the instructions of the installation wizard.
-17. Continue with **B. Set up VSCode**.
+25. Go to https://djpowell.github.io/leiningen-win-installer/ and download the leiningen-win-installer 1.0 under the green arrowy button. Follow the instructions of the installation wizard.
+26. Continue with **B. Set up VSCode**.
 
 If you are using Linux, you can ask help from the coach.
 

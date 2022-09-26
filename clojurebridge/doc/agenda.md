@@ -1,37 +1,36 @@
-# Opening _(Ykä)_
+# Opening _(Henna/Tampere)_ _(Katja/Helsinki)_
 
 - Welcome
 - Practicalities
 - Agenda
 - Introductions
-- Lunch groups for each coaches
 
-# InstallFest _(everyone)_
+# InstallFest _(Henna Emppu/tampere)_ _(Henna Katja yms / helsinki)_
 
-- [Instructions](install-nightcode.md)
+- [Instructions](https://github.com/clojurebridgefi/clojurebridge22-materials/blob/main/clojurebridge/doc/install-from-internet.md)
 
-# What is programming? _(Juhis)_
+# What is programming? _(Rudolf/Tampere)_ _(Sini/Helsinki)_
 
 - How does a computer work
 - Programming in general
 
-# Basics of Clojure programming _(Ykä)_
+# Basics of Clojure programming _(Katja/Tampere )_ _(Emppu/Helsinki )_
 
-- Write and run code in Nightcode's Instarepl
+- Write and run code in vscode+calva
 - [src/clojurebridge_intro/basics.clj](../src/clojurebridge_intro/basics.clj)
 - IDE introduction
 - Variables
 - Functions
 - Evaluating
 
-# Data structures _(Rudolf)_
+# Data structures _(Rudolf/Tampere )_ _(Kimmo ja Henna/Helsinki )_
 
 - Vector
 - Map
 - If & let
 - Use example data for the following excercise?
 
-# Map, Filter, Reduce _(Kimmo)_
+# Map, Filter, Reduce _(Henna)_
 
 - introduce map, filter and reduce by acting a play on the
 
@@ -46,12 +45,12 @@
   - filter
   - reduce
 
-# Talk _(Asta)_
+# Talk _(Katja/Tampere)_ _(Emppu/Helsinki)_
 
 - How did I end up being a programmer?
 - How has it been to work as a programmer?
 
-# Graphics with quil _(Ykä)_
+# clojurebridge 2 ad _(Henna)_
 
 - Interactive graphics
   - [src/clojurebridge_intro/drawing.clj](../src/clojurebridge_intro/drawing.clj)
@@ -59,7 +58,6 @@
 - Visualise books
   - [src/clojurebridge_intro/books_graph.clj](../src/clojurebridge_intro/books_graph.clj)
   - use filter together with quil
-
 
 # Maybe try out a web project (optional)
 
@@ -69,7 +67,7 @@
 - Hit Run
 - open http://localhost:3000
 
-# Demo project (optional)
+# Demo project (Esko)
 
 - Real life full stack Clojure project (Niclas, Kai & Ykä)
 
