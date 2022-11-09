@@ -45,3 +45,22 @@ Type these into your Git Bash terminal, and be sure to use the same email you us
 
 In case of typo or other weirdness, you can run those commands again, and the last one will stay.
 You can check the configuratins by typing `git config --list`.
+
+## Linux (Ubuntu/Debian)
+
+Git packages are available using `apt`.
+
+To make sure you're running the latest version, navigate to your command prompt shell and run the following command to make sure everything is up-to-date: `sudo apt-get update`.
+
+To install Git, run the following command: `sudo apt-get install git-all`.
+Once the command output has completed, you can verify the installation by typing: `git version`.
+
+After installation, you need to configure git to work smoothly.
+Type these into your command prompt shell, and be sure to use the same email you used when creating GitHub account:
+
+`git config --global user.name "replaceThisWithYourOwnUserName"`
+
+`git config --global user.email "replaceThisWithYourOwnEmail"`
+
+In case of typo or other weirdness, you can run those commands again, and the last one will stay.
+You can check the configuratins by typing `git config --list`.
