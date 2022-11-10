@@ -1,10 +1,12 @@
 (ns cljbridge.core
+  (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [accountant.core :as accountant]
             [clerk.core :as clerk]
             [reagent.core :as reagent :refer [atom]]
             [reagent.dom :as rdom]
             [reagent.session :as session]
             [reitit.frontend :as reitit]
+            [cljs.core.async :refer [<!]]
             [cljs-http.client :as http]))
 
 ;; -------------------------
@@ -62,10 +64,15 @@
 
 (def text (reagent/atom ""))
 (def selection (reagent/atom ""))
+(def result (reagent/atom ""))
 
 (defn send-request [text selection]
   (println "Hello. You gave me:" text selection)
-  (http/post "/form" {:form-params {:text text :selection selection} :type :json}))
+  (go (let [response (<! (http/post "/form" {:form-params {:text text :selection selection}
+                                             :type :json
+                                             :async? true}))]
+        (println "Response: " (:body response))
+        (reset! result (:body response)))))
 
 (defn clojurebridge-page []
   (fn [] [:span.main
@@ -82,7 +89,8 @@
              [:label [:input {:type :radio :name "radio" :value :upper}] "Make UPPER"]]]
            [:button  {:type "submit"
                       :style {:color "green"}
-                      :on-click #(send-request @text @selection)} "Click me!"]]]))
+                      :on-click #(send-request @text @selection)} "Click me!"]]
+          [:h2 "The result: " @result]]))
 
 ;; -------------------------
 ;; Translate routes -> page components
