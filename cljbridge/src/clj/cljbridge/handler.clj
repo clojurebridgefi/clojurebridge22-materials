@@ -1,5 +1,5 @@
 (ns cljbridge.handler
-  (:require [cljbridge.middleware :refer [middleware ring-opts]]
+  (:require [cljbridge.middleware :refer [ring-opts middleware]]
             [clojure.string :as s]
             [config.core :refer [env]]
             [hiccup.page :refer [html5 include-css include-js]]
@@ -25,6 +25,7 @@
     mount-target
     (include-js "/js/app.js")]))
 
+
 (defn index-handler
   [_request]
   {:status 200
@@ -32,17 +33,16 @@
    :body (loading-page)})
 
 (defn form-handler [request]
-(let [params (:params request)
-      text (:text params)
-      transform (:selection params)
-      text-transformed
-      (case transform
-        "lower" (s/lower-case text)
-        "upper" (s/upper-case text)
-        text)] 
-  {:status 200
-   :headers {"Content-Type" "text/html"}
-   :body text-transformed}))
+  (let [parametrit (:params request)
+        teksti (:teksti parametrit)
+        valinta (:valinta parametrit)
+        muutettu-teksti (case valinta
+                          "lower" (s/lower-case teksti)
+                          "upper" (s/upper-case teksti)
+                          teksti)]
+    {:status 200
+     :headers {"Content-Type" "text/html"}
+     :body muutettu-teksti}))
 
 (def app
   (reitit-ring/ring-handler
@@ -52,9 +52,8 @@
       ["" {:get {:handler index-handler}}]
       ["/:item-id" {:get {:handler index-handler
                           :parameters {:path {:item-id int?}}}}]]
-     ["/clojurebridge" {:get {:handler index-handler}}]
      ["/about" {:get {:handler index-handler}}]
-     ["/form" {:post {:handler form-handler}}]]
+     ["/formi" {:post {:handler form-handler}}]]
     ring-opts)
    (reitit-ring/routes
     (reitit-ring/create-resource-handler {:path "/" :root "/public"})
