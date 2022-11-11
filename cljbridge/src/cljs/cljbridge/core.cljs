@@ -62,16 +62,16 @@
   (fn [] [:span.main
           [:h1 "About cljbridge"]]))
 
-(def text (reagent/atom ""))
+(def city (reagent/atom ""))
 (def selection (reagent/atom ""))
 (def result (reagent/atom ""))
 
-(defn send-request [text selection]
-  (println "Hello. You gave me:" text selection)
-  (go (let [response (<! (http/post "/form" {:form-params {:text text :selection selection}
-                                             :type :json
-                                             :async? true}))]
-        (println "Response: " (:body response))
+(defn send-request [city selection]
+  (println "Hello. You gave me:" city selection)
+  (go (let [url (str "/api/" selection "/" city)
+            response (<! (http/get url {:type :json
+                                        :async? true}))]
+        (println "URL: " url "\nResponse: " (:body response))
         (reset! result (:body response)))))
 
 (defn clojurebridge-page []
@@ -80,17 +80,22 @@
           [:form {:on-submit #(.preventDefault %)}
            [:p
             [:input {:type :text
-                     :value @text
-                     :on-change #(reset! text (.-value (.-target %)))}]]
+                     :value @city
+                     :placeholder "City"
+                     :on-change #(reset! city (.-value (.-target %)))}]]
            [:div {:on-change #(reset! selection  (.-value (.-target %)))}
             [:div
-             [:label [:input {:type :radio :name "radio" :value :lower}] "Make lower"]]
+             [:label [:input {:type :radio :name "radio" :value :forecast}] "Get forecast"]]
             [:div
-             [:label [:input {:type :radio :name "radio" :value :upper}] "Make UPPER"]]]
+             [:label [:input {:type :radio :name "radio" :value :history}] "Get history"]]]
            [:button  {:type "submit"
                       :style {:color "green"}
-                      :on-click #(send-request @text @selection)} "Click me!"]]
-          [:h2 "The result: " @result]]))
+                      :on-click #(send-request @city @selection)} "Click me!"]]
+          [:h2 "The result"]
+          [:ul
+           [:li "Average temperature: " (:avg-temperature @result)]
+           [:li "Start: " (:start-date @result)]
+           [:li "End: " (:end-date @result)]]]))
 
 ;; -------------------------
 ;; Translate routes -> page components

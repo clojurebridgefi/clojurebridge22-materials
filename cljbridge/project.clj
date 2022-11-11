@@ -19,6 +19,8 @@
                   :scope "provided"]
                  [metosin/reitit "0.5.18"]
                  [pez/clerk "1.0.0"]
+                 [clj-http "3.12.3"]
+                 [cheshire "5.11.0"]
                  [venantius/accountant "0.2.5"
                   :exclusions [org.clojure/tools.reader]]]
 

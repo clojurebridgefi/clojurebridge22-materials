@@ -2,6 +2,7 @@
   (:require [cljbridge.middleware :refer [middleware ring-opts]]
             [clojure.string :as s]
             [config.core :refer [env]]
+            [cljbridge.api :as api]
             [hiccup.page :refer [html5 include-css include-js]]
             [reitit.ring :as reitit-ring]))
 
@@ -54,7 +55,9 @@
                           :parameters {:path {:item-id int?}}}}]]
      ["/clojurebridge" {:get {:handler index-handler}}]
      ["/about" {:get {:handler index-handler}}]
-     ["/form" {:post {:handler form-handler}}]]
+     ["/form" {:post {:handler form-handler}}]
+     ["/api/forecast/:city" {:get {:handler api/forecast-handler}}]
+     ["/api/history/:city" {:get {:handler api/history-handler}}]]
     ring-opts)
    (reitit-ring/routes
     (reitit-ring/create-resource-handler {:path "/" :root "/public"})
