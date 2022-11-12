@@ -89,9 +89,30 @@ Kun saat toteutuksen toimimaan REPLissä, kopioi koodi `api.clj`-tiedostoon ja t
     ...))
 ```
 
-### 6. Tee web-sivulle lomake, joka hakee keskilämpötilan ja näyttää sen palauttaman tuloksen
+## 6. Tee web-sivulle lomake, joka hakee keskilämpötilan ja näyttää sen palauttaman tuloksen
 
 - Muokkaa `src/cljs/cljbridge/core.cljs` tiedostossa funktiota `send-request` siten, että se hakee datan rakentamastasi `/api/forecast/:city`-rajapinnasta.
 - Et tarvitse `:form-params`-tietoa, sillä paikan nimi annetaan osana URL-polkua.
 - Funktio tallentaa jo APIn palauttaman vastauksen rungon `result`-atomiin.
 - Voit joutua valitsemaan `result`-atomista halutun tiedon backendissa käyttämästäsi keywordista, esim `(:avg-temperature @result)`
+
+## 7. Bonus 1: Hae edellisten lisäksi myös historiallinen lämpötiladata
+
+- Historiallinen lämpötiladata on saatavissa omasta rajapinnastaan: https://open-meteo.com/en/docs/historical-weather-api
+- Esimerkki API url: `https://archive-api.open-meteo.com/v1/era5?latitude=52.52&longitude=13.41&start_date=2022-01-01&end_date=2022-07-13&hourly=temperature_2m`
+- Lämpötiladata tarvitsee kaksi uutta parametria: `start_date` ja `end_date`. Voit käyttää joko kiinnitettyjä päivämääriä tai jos haluat, voit muodostaa päivämäärät ohjelmallisesti.
+- Päivämäärien muodostamiseen käytetään Java-luokkia `OffsetDateTime` ja `DateTimeFormatter`:
+```clojure
+(def date-formatter (DateTimeFormatter/ISO_LOCAL_DATE))
+
+(defn- current-date-minus-days [days]
+  (-> (OffsetDateTime/now)
+      (.minusDays days)
+      (.format date-formatter)))
+```
+- Tee uusi funktio, joka osaa hakea historiallista lämpötiladataa
+- Kytke tämä funktio reittimäärityksessä omaan URL-osoitteeseensa, esim `/api/history/:city`.
+- Valitse frontissa lomakkeen syötteen pohjalta, kummasta APIsta tieto haetaan ja käsittele saatu data.
+
+## 8. Bonus 2: Tutki APIn palauttamaa dataa ja rakenna joku muu tapa hyödyntää sitä 
+
