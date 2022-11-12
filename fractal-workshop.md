@@ -20,6 +20,10 @@
 1. luodaan uusi ikkuna replistä (eli terminaalin clojure-tulkista). Jos uutta ikkunaa ei ilmesty niin pyydä ohjaajalta apua.
 
            (new-window {:size [920 900]})
+
+jos komento ei toimi, aja ensin replissä
+
+          (use 'clojure-turtle.core)
                
 2. Testaa komentoja replistä 
                 
