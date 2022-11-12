@@ -184,7 +184,7 @@ Tee funktio nimeltä cline, jolla on parametrit syvyys ja pituus. kutsu sitä
     
 ## animointi
 
-jos haluat nähdä kilpikonnan liikkeen, laita johonkin väliin
+jos haluat nähdä kilpikonnan liikkeen, laita jonkin do-blokin sisään
 
      (wait 5)
 
