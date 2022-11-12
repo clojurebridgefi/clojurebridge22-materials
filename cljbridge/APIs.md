@@ -2,7 +2,7 @@
 
 ## 1. Mikä on API eli rajapinta?
 
-- Dokumentoitu tapa jolla kaksi ohjelmistoa kommunikoi keskenään
+- Dokumentoitu tapa, jolla kaksi ohjelmistoa kommunikoi keskenään
 - Tässä kontekstissa keskitytään web apeihin. On myös muita rajapintoja (kielet, kirjastot, käyttöjärjestlmät, laitteisto).
 - Tyypillisimmät arkkitehtuurit: [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) ja [GraphQL](https://en.wikipedia.org/wiki/GraphQL)
 - Yleisimmät dataformaatit: [JSON](https://en.wikipedia.org/wiki/JSON) ja [XML](https://en.wikipedia.org/wiki/XML)
@@ -41,7 +41,7 @@
    ```
 
    - Clj-http on backendissä käyettävä HTTP client
-   - Cheshire on clj-http:n käyttämä JSON-jäsennin (parseri)
+   - Cheshire on clj-http:n käyttämä JSON-jäsennin (*eng: parser*)
 1. Käynnistä koko projektin kääntäjä `figwheel` uudelleen
    ```
    $ lein figwheel
@@ -51,7 +51,7 @@
    $ lein repl
    ```
 
-Valmis runko oman `cljbridge.api`-nimiavaruuden lähtökohdaksi. Tallenna se tiedostoon `src/clj/cljbridge/api.clj`:
+Valmis runko oman `cljbridge.api`-nimiavaruuden (*eng: namespace*) lähtökohdaksi. Tallenna se tiedostoon `src/clj/cljbridge/api.clj`:
 ```clojure
 (ns cljbridge.api
   (:require [clj-http.client :as client])
@@ -68,3 +68,5 @@ Valmis runko oman `cljbridge.api`-nimiavaruuden lähtökohdaksi. Tallenna se tie
 
 Lisäksi vinkkinä Clojure Cheatsheet: https://clojure.org/api/cheatsheet
 
+## Seuraavaksi
+:point_right: [Rajapintatehtävät](https://github.com/clojurebridgefi/clojurebridge22-materials/blob/webdev-api/cljbridge/API-excercise.md)
