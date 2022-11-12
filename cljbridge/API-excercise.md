@@ -79,6 +79,19 @@ Kun saat toteutuksen toimimaan REPLissä, kopioi koodi `api.clj`-tiedostoon ja t
             [cljbridge.api :as api]))
 ```
 - Funktio liitetään osaksi backendin reittimääritelmää. Se löytyy `handler.clj`:n lopusta `app`-määritelmästä, esim:
-```
+```clojure
      ["/api/forecast/:city" {:get {:handler api/forecast-handler}}]
 ```
+- Reittimäärityksessä oleva keyword `:city` saadaan haettua backend-pyynnön sisältä `:path-params`-rakenteesta. Handler-funktio saa HTTP-pyynnön map-muotoisena parametrina.
+```clojure
+(defn forecast-handler [request]
+  (let [city (:city (:path-params request))]
+    ...))
+```
+
+### 6. Tee web-sivulle lomake, joka hakee keskilämpötilan ja näyttää sen palauttaman tuloksen
+
+- Muokkaa `src/cljs/cljbridge/core.cljs` tiedostossa funktiota `send-request` siten, että se hakee datan rakentamastasi `/api/forecast/:city`-rajapinnasta.
+- Et tarvitse `:form-params`-tietoa, sillä paikan nimi annetaan osana URL-polkua.
+- Funktio tallentaa jo APIn palauttaman vastauksen rungon `result`-atomiin.
+- Voit joutua valitsemaan `result`-atomista halutun tiedon backendissa käyttämästäsi keywordista, esim `(:avg-temperature @result)`
