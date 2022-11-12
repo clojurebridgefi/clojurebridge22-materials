@@ -24,7 +24,7 @@ Kun saat toteutuksen toimimaan REPLissä, kopioi koodi `api.clj`-tiedostoon ja t
 (def response (api-get url))
 ```
 - Tutki REPLissä mitä tietoa vastauksessa tulee. Kun vastauksena on map, saat mapin avaimet `keys`-funktiolla. Jos vastaus on vektori, saat ensimmäisen elementin `first`-funktiolla.
-- Saat valittua dataa `map`-tietorakenteesta käyttämällä keywordia funktionimenä. Vektorin pituuden voi laskea `count`-funktiolla:
+- Saat valittua dataa `map`-tietorakenteesta käyttämällä keywordia (esim. `:temperatures`) funktionimenä. Vektorin pituuden voi laskea `count`-funktiolla:
     ```clojure
     (def forecast {:temperatures [10.2 10.5]
                    :city "Helsinki"})
@@ -37,6 +37,7 @@ Kun saat toteutuksen toimimaan REPLissä, kopioi koodi `api.clj`-tiedostoon ja t
 ## 2. Laske lämpötilaennusteen keskilämpötila
 
 - Tutki rajapinnan palauttamaa dataa ja mieti miten lasket keskilämpötilan
+  - Vinkki: laskimme Clojurebridge 1. workshopissa keskiarvon pituuksille 
 - Listan tai vektorin elementtien summan voi laskea `reduce`-funktiolla:
    ```
     => (reduce + [1 2 3])
@@ -59,7 +60,7 @@ Kun saat toteutuksen toimimaan REPLissä, kopioi koodi `api.clj`-tiedostoon ja t
 - Tee funktio, joka hakee keskilämpötilaennusteen halutulle kaupungille
 - Joudut liittämään koordinaatit osaksi ennuste-APIn urlin alkua ja yhdistämään parametrit `&`-merkillä:
     ```clojure
-    (str url "&latitude=" latitude "&longitude" longitude)
+    (str url "&latitude=" latitude "&longitude=" longitude)
     ```
 
 ## 5. Luo oma rajapinta backendiin joka palauttaa ennusteen keskilämpötilan annetulle paikannimelle
