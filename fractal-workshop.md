@@ -178,7 +178,15 @@ Tee funktio nimeltä cline, jolla on parametrit syvyys ja pituus. kutsu sitä
      (setxy -100 -200)
      (cline 9 10)
 
+## väri rgb-arvoina
 
+    (color [0 0 255])
+    
+## animointi
+
+jos haluat nähdä kilpikonnan liikkeen, laita johonkin väliin
+
+     (wait 5)
 
 
 
