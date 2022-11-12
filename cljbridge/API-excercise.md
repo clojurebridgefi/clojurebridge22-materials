@@ -24,7 +24,7 @@ Kun saat toteutuksen toimimaan REPLissä, kopioi koodi `api.clj`-tiedostoon ja t
 (def response (api-get url))
 ```
 - Tutki REPLissä mitä tietoa vastauksessa tulee. Kun vastauksena on map, saat mapin avaimet `keys`-funktiolla. Jos vastaus on vektori, saat ensimmäisen elementin `first`-funktiolla.
-- Saat valittua dataa `map`-tietorakenteesta käyttämällä keywordia (esim. `forecast`) funktionimenä. Vektorin pituuden voi laskea `count`-funktiolla:
+- Saat valittua dataa `map`-tietorakenteesta käyttämällä keywordia (esim. `:temperatures`) funktionimenä. Vektorin pituuden voi laskea `count`-funktiolla:
     ```clojure
     (def forecast {:temperatures [10.2 10.5]
                    :city "Helsinki"})
