@@ -1,4 +1,4 @@
-# Rajapinnat
+# Johdanto rajapintoihin
 
 ## 1. Mikä on API eli rajapinta?
 
@@ -16,17 +16,21 @@
 
 ## 3. Työpajan sisältö
 
-1. Rakennetaan ohjelma, joka hyödyntää kolmea olemassaolevaa avointa rajapintaa:
+1. Rakennetaan ohjelma, joka hyödyntää muutamaa olemassaolevaa avointa rajapintaa
    * [Weather Forecast API](https://open-meteo.com/en/docs)
    * [Geocoding API](https://open-meteo.com/en/docs/geocoding-api)
-   * [Historical Weather API](https://open-meteo.com/en/docs/historical-weather-api)
-     * Vaatii myös päivämäärien käsittelyä, jonka yhteydessä puhutaan hieman [Clojure-Java-interopista](https://clojure.org/reference/java_interop) (yksi rajapinta tämäkin)
 
 1. Luodaan oma backend API edellisten ympärille osana cljbridge reagent-projektia
 
 1. Rakennetaan reagentilla lomake, joka osaa käyttää rakentamaamme APIa ja näyttää tuloksen selaimen sivulla
 
-1. Bonus: tutki APIn palauttamaa dataa ja rakenna joku muu tapa hyödyntää sitä 
+1. Bonus 1: Hae edellisten lisäksi myös historiallinen lämpötiladata
+
+   * [Historical Weather API](https://open-meteo.com/en/docs/historical-weather-api)
+     * Vaatii myös päivämäärien käsittelyä, jonka yhteydessä puhutaan hieman [Clojure-Java-interopista](https://clojure.org/reference/java_interop) (yksi rajapinta tämäkin)
+
+
+1. Bonus 2: tutki APIn palauttamaa dataa ja rakenna joku muu tapa hyödyntää sitä 
 
 ## 4. Setup
 
@@ -47,16 +51,20 @@
    $ lein repl
    ```
 
-Esimerkki oman `cljbridge.api`-nimiavaruuden lähtökohdaksi:
+Valmis runko oman `cljbridge.api`-nimiavaruuden lähtökohdaksi. Tallenna se tiedostoon `src/clj/cljbridge/api.clj`:
 ```clojure
 (ns cljbridge.api
   (:require [clj-http.client :as client])
   (:import [java.time OffsetDateTime]
            [java.time.format DateTimeFormatter]))
 
+(def forecast-url "https://api.open-meteo.com/v1/forecast?hourly=temperature_2m&latitude=60.16952&longitude=24.93545")
 (def weather-history-url "https://archive-api.open-meteo.com/v1/era5?hourly=temperature_2m")
-(def forecast-url "https://api.open-meteo.com/v1/forecast?hourly=temperature_2m&")
 (def geocoding-url "https://geocoding-api.open-meteo.com/v1/search?name=")
+
+(defn- api-get [url]
+  (:body (client/get url {:as :json})))
 ```
 
 Lisäksi vinkkinä Clojure Cheatsheet: https://clojure.org/api/cheatsheet
+
