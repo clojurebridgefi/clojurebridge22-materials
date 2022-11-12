@@ -109,7 +109,6 @@ Yhdellä rekursiolla ja clojure-turtle -kirjaston repeat -funktion avulla voi te
        (repeat 3
          (all
            (when (> length minl) (sierpi minl (/ length 2.0)))
-           (wait 10)
            (forward length)
            (right 120))))
            
