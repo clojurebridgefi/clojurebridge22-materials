@@ -21,7 +21,7 @@
 
            (new-window {:size [920 900]})
 
-jos komento ei toimi, aja ensin replissä
+jos komento ei toimi, tarkista että olet tallentanut muutokset vs-codessa ja käynnistä repl uudestaan. Sen jälkeen voit ajaa ensin replissä
 
           (use 'clojure-turtle.core)
                
